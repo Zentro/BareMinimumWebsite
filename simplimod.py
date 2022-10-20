@@ -1,5 +1,5 @@
 """
-Copyright 2022 Rafael Galvan <rafaelgalvan268@gmail.com>
+Copyright 2022 Rafael Galvan
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,19 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-import os, sys, logging, discord
+import os, sys, logging, discord, platform, simplimod
 from dotenv import load_dotenv
 
-print("""
+print(f"""
    _____ _                 ___ __  ___          __
   / ___/(_)___ ___  ____  / (_)  |/  /___  ____/ /
   \__ \/ / __ `__ \/ __ \/ / / /|_/ / __ \/ __  / 
  ___/ / / / / / / / /_/ / / / /  / / /_/ / /_/ /  
 /____/_/_/ /_/ /_/ .___/_/_/_/  /_/\____/\__,_/   
                 /_/                               
-                /_/                               
+                /_/    {simplimod.__version__}                            
 
     Copyright © 2022 Rafael Galvan
+    discord.py {discord.__version__} by rapptz
+    python-dotenv by Saurabh Kumar
+
+    {platform.system()} {platform.release()} {os.name}
 """)
 
 load_dotenv()
@@ -54,7 +58,7 @@ app_debug = os.getenv("APP_DEBUG")
 
 class SimpliMod(discord.Client):
     async def on_ready(self):
-        pass
+        logging.info('')
 
     async def on_message(self, message):
         pass
